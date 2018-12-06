@@ -21,4 +21,3 @@ print (("She has got {} eyes and {} hair").format(eyes, hair))
 print (("Her teeth are usually {} depending on the coffee.").format(teeth))
 
 print (("If I add {}, {} and {} I get {}").format(age, height, weight, age + height + weight))
-
