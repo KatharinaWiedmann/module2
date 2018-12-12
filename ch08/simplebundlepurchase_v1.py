@@ -15,13 +15,16 @@ def DataBundlePurchase(truePasscode, balance):
                print("Your two phone numbers match")
                if checkBalance(balance) :  
                    print('Your balance is {}'.format(balance))
-                   amount = topup(balance)
-                   if amount < balance:
-                       print("You just purchased data")
-                       newBalance = calculateNewBalance(amount, balance)
-                       print("Your new balance is {}.".format(newBalance))
-                   else:
-                       return 'Transaction failed due to insufficient balance'                
+                   multiple_of_five = multipleOfFive(balance)
+                   amount = topup(multiple_of_five)
+                   if amount < multiple_of_five and (amount%5 ==0):
+                      print("You just purchased data worth {}" .format(amount))
+                      newBalance = calculateNewBalance(amount, balance)
+                      print("Your new balance is {}.".format(newBalance))
+                   elif amount < multiple_of_five and (amount%5 != 0):
+                        return "It is only possible to purchase a multiple of five."
+                   elif amount > multiple_of_five and (amount%5 == 0):
+                       return 'Transaction failed due to insufficient balance'     
                else:
                    return ('Your balance of {} is not sufficient.'.format(balance))
            else:
@@ -62,45 +65,17 @@ def checkBalance(balance):
         return True
     else:
         return False
+   
+def multipleOfFive(balance):
+    remainder = (int(balance)%5) 
+    multiple_of_five = int(balance) - int(remainder)
+    return multiple_of_five
+    print(multiple_of_five)   
     
-def topup(balance):
-    amount = int(input("If you like you can purchase a data bundle worth {}. How much would you like to spend on data? ".format(balance)))
+def topup(multiple_of_five):
+    amount = int(input("If you like you can purchase a data bundle worth up to {}. How much would you like to spend on data? Please type in a multiple of five. ".format(multiple_of_five)))
     return amount 
  
 def calculateNewBalance(amount, balance):
     newBalance = balance - amount
     return newBalance
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
