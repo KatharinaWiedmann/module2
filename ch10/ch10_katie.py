@@ -112,3 +112,33 @@ print(sorted(info_metals.items(), key = lambda kv: kv[1][1], reverse = True))
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
