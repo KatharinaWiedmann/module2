@@ -57,6 +57,6 @@ def convert_temperature(centigrade):
     kelvin = centigrade + 273.15 
     return ("That's {} in Fahrenheit and {} in Kelvin.".format(fahrenheit, kelvin))
 
-convert_temperature(3)    
+   
 
 
