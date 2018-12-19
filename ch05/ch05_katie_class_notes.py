@@ -3,7 +3,9 @@
 #Created on Wed Dec  5 10:13:12 2018
 #
 #@author: 612383447
+import sys
 #"""
+
 ##exercise 1 
 ##class Customer(object):
 ##    """A customer of ABC Bank with a checking account. Customers have the following properties:
@@ -49,35 +51,35 @@
 #
 #
 #
-#
-#
-###exercise 2
-##class Animal():
-###the following two will assign values to all animals     
-##    def eat(self):
-##        print('yum')
-##        
-##    def __init__(self, favourite_colour, balance, age):
-##        self.favourite_colour = favourite_colour
-##        self.balance = balance
-##        self.age = age
-###Dog inherits eating and init(with own values!) from animals         
-##class Dog(Animal):
-##    def bark(self):
-##        print('Woof!')
-###Cat inherits eating and init(with own values!) from animals         
-##class Cat(Animal):
-##    def meow(self):
-##        print('Meow')
-###Labrador inherits eating and init(with own values!) from animals and barking from Dog. Also it can sleep         
-##class Labrador(Dog):
-##    def sleep(self):
-##        print("Let me sleep!")
-###Main_Coon inherits eating and init(with own values!) from animals and meowing from cat. Also it can sleep.        
-##class Main_Coon(Cat):
-##    def sleep(self):
-##        print("Let me sleep!")        
-##        
+##
+##
+##exercise 2
+#class Animal():
+##the following two will assign values to all animals     
+#    def eat(self):
+#        print('yum')
+#        
+#    def __init__(self, favourite_colour, balance, age):
+#        self.favourite_colour = favourite_colour
+#        self.balance = balance
+#        self.age = age
+##Dog inherits eating and init(with own values!) from animals         
+#class Dog(Animal):
+#    def bark(self):
+#        print('Woof!')
+##Cat inherits eating and init(with own values!) from animals         
+#class Cat(Animal):
+#    def meow(self):
+#        print('Meow')
+##Labrador inherits eating and init(with own values!) from animals and barking from Dog. Also it can sleep         
+#class Labrador(Dog):
+#    def sleep(self):
+#        print("Let me sleep!")
+##Main_Coon inherits eating and init(with own values!) from animals and meowing from cat. Also it can sleep.        
+#class Main_Coon(Cat):
+#    def sleep(self):
+#        print("Let me sleep!")        
+#        
 ##Snoopy = Dog('blue', 70, 8)
 ##Snoopy.bark()
 ##Snoopy.eat()
@@ -94,105 +96,125 @@
 ##Polly.sleep()
 ##print("Polly's favourite colour, balance and age:", Polly.favourite_colour,",", Polly.balance,",", Polly.age)
 #
+#favourite_colour = sys.argv[1]
+#balance = sys.argv[2]
+#age = sys.argv[3]
+#
+#print(favourite_colour)
+#print(balance)
+#print(age)
+
 #exercise 3:
-#class family_member():
-#
-#    def __init__(self, name, age):
-#            self.name = name
-#            self.age = age    
-#        
-#    
-#    def family_house(self, house_location, family_name):
-#       print("Hi, so you are part of the {} family".format(family_name),"and you live in {}. ".format(house_location))   
-#        
-#
-#class grandparent(family_member):
-#    def teaching_values(self, value):
-#        print("Oh, so you say {} is the most important. Good choice".format(value))
-#        
-#class parent(grandparent):
-#  
-#    def teaching_softskill(self, softskill):
-#        print("The most important soft skill is: {}.".format(softskill), "You can pass this softskill onto your children.")
-#
-#class child(parent):
-#    def applying_value_and_softskill(self, value, softskill):      
-#        print("Your parents taught you: {}". format(value), "and {} " .format(softskill))
-#        
-##script has to be separate!   
+class family_member():
+
+    def __init__(self, name, age):
+            self.name = name
+            self.age = age    
+        
+    
+    def family_house(self, house_location, family_name):
+       print("Hi, so you are part of the {} family".format(family_name),"and you live in {}. ".format(house_location))   
+        
+
+class grandparent(family_member):
+    def teaching_values(self, value):
+        print("Oh, so you say {} is the most important. Good choice".format(value))
+        
+class parent(grandparent):
+  
+    def teaching_softskill(self, softskill):
+        print("The most important soft skill is: {}.".format(softskill), "You can pass this softskill onto your children.")
+
+class child(parent):
+    def applying_value_and_softskill(self, value, softskill):      
+        print("Your parents taught you: {}". format(value), "and {} " .format(softskill))
+        
+#script has to be separate!   
+ 
+Opa = grandparent('Franz', 80)
+family_name = input("Hi. Please type your family name here: ")        
+house_location = input("Where do you live? ") 
+Opa.family_house(house_location, family_name)
+value = input("As a grandparent you can decide which is the most important value of the family. Please type it in here: ")
+Opa.teaching_values(value)
+print(Opa.age)
+print(Opa.name)
+   
 # 
-#Opa = grandparent('Franz', 80)       
-#family_name = input("Hi. Please type your family name here: ")        
-#
-#house_location = input("Where do you live? ") 
-#Opa.family_house(house_location, family_name) #needs to have the variables which should be 
-#
-#value = input("As a grandparent you can decide which is the most important value of the family. Please type it in here: ")
-#Opa.teaching_values(value)
-#    
-#      
-#Papa = parent('Andreas', 55)
-#family_name = input("Hi. Please type your family name here: ")  
-#house_location = input("Where do you live? ") 
-#Papa.family_house(house_location, family_name)
-#softskill = input("As a parent you can decide which is the soft skill the kids should learn. Please tell me what's most important: ")
-#Papa.teaching_softskill(softskill)    
-#
-#
+   
+Papa = parent('Andreas', 55)
+family_name = input("Hi. Please type your family name here: ")  
+house_location = input("Where do you live? ") 
+Papa.family_house(house_location, family_name)
+softskill = input("As a parent you can decide which is the soft skill the kids should learn. Please tell me what's most important: ")
+Papa.teaching_softskill(softskill)    
+print(Papa.age)
+print(Papa.name)
+
+##
 ##CHECK THIS LATER
-#Kind = child('Katie', 23)
-#family_name = input("Hi. Please type your family name here: ")  
-#house_location = input("Where do you live? ") 
-#Kind.family_house(house_location, family_name)
-#Kind.applying_value_and_softskill(value, softskill)    
-#
-#
-#exercise 4:
-class Animal():
-    def eat(self):
-        print("yum")
-class Dog(Animal):
-    def bark(self):
-        print("woof!")
-        
-class Robot():
-    def move(self):
-            print("...move move move...")
+Kind = child('Katie', 23)
+family_name = input("Hi. P
+                    
+                    lease type your family name here: ")  
+house_location = input("Where do you live? ") 
+Kind.family_house(house_location, family_name)
+Kind.applying_value_and_softskill(value, softskill)    
 
-class CleanRobot(Robot):
-    def clean(self):
-        print("I vacuum dust")
-        
-class SuperRobot():
-    def __init__(self):
-        #This class contains 3 objects - can do everything  
-        self.o1 = Robot()
-        self.o2 = Dog()
-        self.o3 = CleanRobot()
-        self.o4 = Animal()
-    
-    def playGame(self):
-        print("alphago game")
-    def move(self):
-        return self.o1.move() #using robot class method
-    def bark(self):
-        return self.o2.bark() #using dog class method
-    def clean(self):
-        return self.o3.clean() #using cleanrobot method 
-    def eat(self):
-        return self.o4.eat() #using animal method 
-    
-machineDog = SuperRobot()
-machineDog.move()
-machineDog.bark()
-machineDog.clean()
+#
+##exercise 4:
+#class Animal():
+#    def eat(self):
+#        print("yum")
+#class Dog(Animal):
+#    def bark(self):
+#        print("woof!")
+#        
+#class Robot():
+#    def move(self):
+#            print("...move move move...")
+#
+#class CleanRobot(Robot):
+#    def clean(self):
+#        print("I vacuum dust")
+#        
+#class SuperRobot():
+#    def __init__(self):
+#        #This class contains 3 objects - can do everything  
+#        self.o1 = Robot()
+#        self.o2 = Dog()
+#        self.o3 = CleanRobot()
+#        self.o4 = Animal()
+#    
+#    def playGame(self):
+#        print("alphago game")
+#    def move(self):
+#        return self.o1.move() #using robot class method
+#    def bark(self):
+#        return self.o2.bark() #using dog class method
+#    def clean(self):
+#        return self.o3.clean() #using cleanrobot method 
+#    def eat(self):
+#        return self.o4.eat() #using animal method 
+#  
+#    
+#name = sys.argv[1]
+#age = sys.argv[2]
+#
+#print(name)
+#print(age)    
+#machineDog = SuperRobot()
+#machineDog.move()
+#machineDog.bark()
+#machineDog.clean()
+#
+##SupermachineDog can do everything, even eat! 
+#SupermachineDog = SuperRobot()
 
-#SupermachineDog can do everything, even eat! 
-SupermachineDog = SuperRobot()
-SupermachineDog.move()
-SupermachineDog.bark()
-SupermachineDog.clean()
-SupermachineDog.eat()
+#SupermachineDog.move()
+#SupermachineDog.bark()
+#SupermachineDog.clean()
+#SupermachineDog.eat()
 
     
 

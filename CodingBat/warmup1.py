@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Dec  3 15:06:07 2018
+Created on Sun Dec  9 08:08:30 2018
 
-@author: 612383447
+@author: Katharina
 """
 

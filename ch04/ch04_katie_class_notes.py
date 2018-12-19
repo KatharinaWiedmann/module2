@@ -51,29 +51,28 @@ Created on Tue Dec  4 11:47:39 2018
 #
 #  
 
-#age = input("How old are you? ")
-#age = int(age)
-#
-#if age < 13:
-#    print("child")
-#    
-#elif age < 18:
-#    print("teen")
-#
-#elif age < 65:
-#    print("adult")
-#    
-#else: 
-#    print("pensioner")
-#    
-#
-#support = input("Which football club do you support? FC Bayern Munich or Dortmund? ")
-#
-#if (support == 'FC Bayern Munich'):
-#    print("Well done, good choice!")
-#
-#else:
-#    print ("Really, you support {} ?! WHYYYY?".format(support))
+age = input("How old are you? ")
+age = int(age)
+
+if age < 13:
+    print("child")
+    
+elif age < 18:
+    print("teen")
+
+elif age < 65:
+    print("adult")
+    
+else: 
+    print("pensioner")
+    
+
+support = input("Which football club do you support? FC Bayern Munich or Dortmund? ")
+
+if (support == 'FC Bayern Munich'):
+    print("Well done, good choice!")
+else:
+    print ("Really, you support {} ?! WHYYYY?".format(support))
 
 
 
