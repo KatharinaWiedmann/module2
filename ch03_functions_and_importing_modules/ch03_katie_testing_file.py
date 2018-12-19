@@ -4,7 +4,7 @@ Created on Mon Dec  3 15:45:41 2018
 
 @author: 612383447
 """
-from ch03_function_file import *
+from ch03_katie_function_file import *
 #exercise 1
 k = 'hello'
 l = 'world'
