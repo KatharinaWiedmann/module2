@@ -12,27 +12,45 @@ class MovingShape:
         self.shape = shape
         self.diameter = diameter
         self.figure = Shape(shape, diameter)
-#        self.x = 0
-#        self.y = 0
         self.dx = 5 + 10 * r()
         self.dy = 5 + 10 * r()
-        self.minx = diameter/2
-        self.maxx = frame.width - (diameter/2)
-        self.miny = diameter/2
-        self.maxy = frame.height - (diameter/2)
+        
+        def minmaxdefault(self, diameter):
+            self.minx = diameter/2
+            self.maxx = frame.width - (diameter/2)
+            self.miny = diameter/2
+            self.maxy = frame.height - (diameter/2)
+        minmaxdefault(self,diameter)    
+        
         self.x = self.minx + r() * (self.maxx - self.minx)
         self.y = self.miny + r() * (self.maxy - self.miny)
-        if r() < 0.5:
-            return
+        
     def goto(self, x, y): 
         self.figure.goto(x, y)
     def moveTick(self):
-        if r() < 0.5: 
-            self.x = self.dx + self.x
-            self.y = self.dy + self.y
-        else:
-            self.x = self.x - self.dx 
-            self.y = self.y - self.dy 
+#WHAT ABOUT THE CHANGE OF DIRECTION?!                
+#        if r() < 0.5: 
+#            self.x = self.dx + self.x
+#            self.y = self.dy + self.y
+#        else:
+#            self.x = self.x - self.dx 
+#            self.y = self.y - self.dy 
+        
+        if self.x <= self.minx:
+            self.dx = (self.dx)* -1
+            
+        if self.x >= self.maxx:
+            self.dx = (self.dx)* -1
+        
+        if self.y <= self.miny:
+            self.dy = (self.dy)* -1
+        
+        if self.y >= self.maxy:
+            self.dy = (self.dy)* -1
+            
+        self.x = self.dx + self.x
+        self.y = self.dy + self.y
+
            
         self.goto(self.x, self.y)
         
@@ -46,6 +64,13 @@ class Square(MovingShape):
 class Diamond(MovingShape):
     def __init__(self, frame, diameter):
         MovingShape.__init__(self, frame, 'diamond', diameter)
+        def minmaxdefault(self, diameter):
+            diameter = 2* diameter 
+            self.minx = diameter/2
+            self.maxx = frame.width - (diameter/2)
+            self.miny = diameter/2
+            self.maxy = frame.height - (diameter/2)
+        minmaxdefault(self,diameter)    
 
 class Circle(MovingShape):
     def __init__(self, frame, diameter):
