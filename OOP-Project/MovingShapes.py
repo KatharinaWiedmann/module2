@@ -12,8 +12,8 @@ class MovingShape:
         self.shape = shape
         self.diameter = diameter
         self.figure = Shape(shape, diameter)
-        self.dx = 5 + 10 * r()
-        self.dy = 5 + 10 * r()
+        self.dx = self.SpeedX()
+        self.dy = self.SpeedY()
         
         def minmaxdefault(self, diameter):
             self.minx = diameter/2
@@ -27,15 +27,24 @@ class MovingShape:
         
     def goto(self, x, y): 
         self.figure.goto(x, y)
-    def moveTick(self):
-#WHAT ABOUT THE CHANGE OF DIRECTION?!                
-#        if r() < 0.5: 
-#            self.x = self.dx + self.x
-#            self.y = self.dy + self.y
-#        else:
-#            self.x = self.x - self.dx 
-#            self.y = self.y - self.dy 
         
+    def SpeedX(self):
+        self.dx = 5 + 10* r()
+        if r() > 0.5:
+            self.dx = -self.dx
+        else:
+            self.dx = self.dx  
+        return self.dx 
+    
+    def SpeedY(self):
+        self.dy = 5 + 10* r()
+        if r() > 0.5:
+            self.dy = -self.dy
+        else:
+            self.dy = self.dy  
+        return self.dy 
+    
+    def moveTick(self):   
         if self.x <= self.minx:
             self.dx = (self.dx)* -1
             
