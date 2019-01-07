@@ -124,6 +124,13 @@ total = 0
 for val in values:
     total += val 
 print('TOTAL:' , total)
+
+def sumValues(l):
+    sumV = 0
+    for val in l:
+        sumV += val
+        return sumV
+print(sumValues(values))
 #
 
 
