@@ -63,10 +63,15 @@ class Animal():
         self.favourite_colour = favourite_colour
         self.balance = balance
         self.age = age
+        
 #Dog inherits eating and init(with own values!) from animals         
 class Dog(Animal):
     def bark(self):
         print('Woof!')
+        
+    def sing(self):
+        print('Lalala')
+        
 #Cat inherits eating and init(with own values!) from animals         
 class Cat(Animal):
     def meow(self):
@@ -82,6 +87,7 @@ class Main_Coon(Cat):
         
 Snoopy = Dog('blue', 70, 8)
 Snoopy.bark()
+Snoopy.sing()
 Snoopy.eat()
 print("Snoopy's favourite colour, balance and age:", Snoopy.favourite_colour,",", Snoopy.balance,",", Snoopy.age)
 
