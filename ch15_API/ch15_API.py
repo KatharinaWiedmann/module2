@@ -1,21 +1,21 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Jan 10 14:00:43 2019
+Created on Thu Jan 17 16:19:08 2019
 
 @author: Katharina
 """
-
-#to make this work, items in CAPITALS need to be inserted 
-
 import requests
-
+#TO MAKE IT WORK INSERT API KEY AND OWN EMAIL ADDRESS
 def send_simple_message():
     return requests.post(
-        "API-KEY",
+        "https://api.mailgun.net/v3/sandbox490bc5ef18e6418ba66ef94868d3191c.mailgun.org/messages",
         auth=("api", "API-KEY"),
-        data={"from": "Excited User <E-Mail ADDRESS>",
-              "to": ["E-Mail ADDRESS"],
+        data={"from": "Excited User <mailgun@sandbox490bc5ef18e6418ba66ef94868d3191c.mailgun.org>",
+              "to": ["OWN EMAIL ADDRESS"],
               "subject": "Let's see what's going to happen",
               "text": "It will probably show if it works"})
     
 send_simple_message()
+
+
+
