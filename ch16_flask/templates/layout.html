@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+   <meta charset="utf-8">
+   <title>{{title}} | Flask Experiment</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/custom-css.css')}}">
+ </head>
+ <body>
+    <header>
+		<h1>{{title}}</h1>
+        <nav>
+          <ul class="menu">
+            <li><a href="{{ url_for('contact') }}">Contact form</a></li>
+            <li><a href="{{ url_for('ada') }}">Ada</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    {% block content %}
+    {% endblock %}
+ </body>
+</html>
