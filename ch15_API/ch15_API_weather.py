@@ -8,9 +8,10 @@ Created on Thu Jan 10 14:34:57 2019
 #to make this work, items in CAPITALS need to be inserted 
 
 import requests
+import config
 
 endpoint = "http://api.openweathermap.org/data/2.5/weather"
-payload = {"q": "Munich,Germany", "units":"metric", "appid":"APP ID"}
+payload = {"q": "Munich,Germany", "units":"metric", "appid":"config.api_key_weather"}
 
 response = requests.get(endpoint, params=payload)
 data = response.json()
