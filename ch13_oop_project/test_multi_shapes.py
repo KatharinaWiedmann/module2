@@ -7,7 +7,7 @@ Created on Tue Jan  1 17:58:52 2019
 
 from MovingShapes import *
 frame = Frame()
-numshapes = 3
+numshapes = 5
 shapes = []
 size = 60
 for i in range(numshapes):
