@@ -11,7 +11,7 @@ import requests
 import config
 
 endpoint = "http://api.openweathermap.org/data/2.5/weather"
-payload = {"q": "Munich,Germany", "units":"metric", "appid":"config.api_key_weather"}
+payload = {"q": "Munich,Germany", "units":"metric", "appid":config.api_key_weather}
 
 response = requests.get(endpoint, params=payload)
 data = response.json()
@@ -27,7 +27,7 @@ temperature = data['main']['temp']
 name = data['name']
 weather = data['weather'][0]['main']
 print('TEMPERATURE', temperature)
-print('WEATHER', weather)
+#print('WEATHER', weather)
 
 print('It is {}C in {}, and the sky is {}'.format(temperature, name, weather))
 
